@@ -4,8 +4,14 @@
         @setEntityName="setEntityName"
     />
     <EntityItems
+        v-if="name"
         :items="items"
     />
+    <div
+      v-else
+    >
+      Пусто
+    </div>
   </div>
 </template>
 
@@ -29,7 +35,7 @@ export default {
   data() {
     return {
       name: null,
-      items: null,
+      items: [],
     }
   },
   methods: {
@@ -58,5 +64,7 @@ export default {
 </script>
 
 <style scoped>
-
+.entity__list{
+  margin-bottom: 30px;
+}
 </style>

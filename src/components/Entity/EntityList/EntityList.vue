@@ -1,8 +1,9 @@
 <template>
-<div class="entity-list">
+<div class="entity__list">
   <EntityBlock
       v-for="(value, key) in options"
       :name="key"
+      @setEntityName="setEntityName"
   />
 </div>
 </template>
@@ -15,19 +16,22 @@ export default {
     EntityBlock
   },
   created() {
-    // this.options = localStorage.getItem("options,")
-    // console.log(localStorage.getItem("options"))
   },
   data(){
     return{
       options:JSON.parse(localStorage.getItem("options"))
+    }
+  },
+  methods:{
+    setEntityName(name){
+      this.$emit("setEntityName", name)
     }
   }
 }
 </script>
 
 <style scoped>
-  .entity-list{
+  .entity__list{
     display: flex;
     justify-content: space-evenly;
   }
