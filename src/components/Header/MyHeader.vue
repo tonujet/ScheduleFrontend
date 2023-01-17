@@ -1,11 +1,13 @@
 <template>
   <div class="header">
     <div class="header__logo">
-      <img src="../../assets/img/logo.png" alt="logo">
+      <router-link  to="/">
+        <img src="../../assets/img/logo.png" alt="logo">
+      </router-link>
     </div>
     <div class="header__menu">
       <router-link class="header__link schedules" to="/">Розклад</router-link>
-      <router-link class="header__link entities" to="/">Сутності</router-link>
+      <router-link class="header__link entities" to="/entities">Сутності</router-link>
       <router-link class="header__link news" to="/">Новини</router-link>
     </div>
   </div>
@@ -19,8 +21,10 @@ export default {
 
 <style scoped>
   .header{
+    background: #ffa841;
     display: flex;
-    align-items: center;
+    align-items: stretch;
+    margin-bottom: 20px;
   }
   .header__logo{
     flex: 1 1 auto;
@@ -30,9 +34,13 @@ export default {
     width: 200px;
   }
   .header__link{
-    display: block;
-    margin-left: 20px;
-    font-size: 2rem;
+    background: orange;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20px;
+    font-size: 1.8rem;
+    margin-left: 60px;
     text-decoration: none;
   }
   .header__menu{
