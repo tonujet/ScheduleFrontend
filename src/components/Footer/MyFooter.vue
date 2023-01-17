@@ -1,10 +1,12 @@
 <template>
-asdasdasd
+ <div class="footer">
+   footer
+ </div>
 </template>
 
 <script>
 export default {
-  name: "SchedulePage"
+  name: "MyFooter"
 }
 </script>
 

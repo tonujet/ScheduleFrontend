@@ -1,13 +1,21 @@
 <template>
   <div class="app">
-    <header></header>
-    <content>
+    <MyHeader class="app__header"/>
+    <content class="app__content">
       <router-view/>
     </content>
-    <footer></footer>
+    <MyFooter class="app__footer"/>
   </div>
 </template>
-
+<script>
+import MyHeader from "@/components/Header/MyHeader.vue";
+import MyFooter from "@/components/Footer/MyFooter.vue";
+ export default {
+   components:{
+     MyHeader, MyFooter
+   }
+ }
+</script>
 <style>
 *{
   box-sizing: border-box;
@@ -16,5 +24,18 @@
 }
 html, body{
   height: 100%;
+}
+.app{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.app__content{
+  display: block;
+  flex: 1 1 auto;
+}
+.app__footer{
+  flex: 0 0 auto;
 }
 </style>

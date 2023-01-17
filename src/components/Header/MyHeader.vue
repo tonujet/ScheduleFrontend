@@ -1,10 +1,12 @@
 <template>
-asdasdasd
+  <div class="header">
+    qwwqeqweqwe
+  </div>
 </template>
 
 <script>
 export default {
-  name: "SchedulePage"
+
 }
 </script>
 
