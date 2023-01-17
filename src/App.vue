@@ -16,7 +16,7 @@ import options from "@/mocks/options";
      MyHeader, MyFooter
    },
    created() {
-     localStorage.setItem("options,", JSON.stringify(options))
+     localStorage.setItem("options", JSON.stringify(options))
    }
  }
 </script>
