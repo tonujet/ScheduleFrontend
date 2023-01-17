@@ -1,10 +1,12 @@
 <template>
-
+<div>
+  list of entities
+</div>
 </template>
 
 <script>
 export default {
-  name: "page"
+  name: "EntityList"
 }
 </script>
 

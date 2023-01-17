@@ -1,10 +1,12 @@
 <template>
- list
+ <div>
+   items
+ </div>
 </template>
 
 <script>
 export default {
-  name: "ListPage"
+  name: "EntityItems"
 }
 </script>
 

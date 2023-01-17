@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: "UpdatePage"
+  name: "EntityBlock"
 }
 </script>
 
