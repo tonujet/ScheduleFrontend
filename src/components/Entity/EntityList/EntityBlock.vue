@@ -1,7 +1,7 @@
 <template>
   <div
       class="entity-block"
-      @click=""
+      @click="setEntityName"
 
   >
     {{ name }}
@@ -16,6 +16,11 @@ export default {
       type: String,
       required: true,
     }
+  },
+  methods:{
+    setEntityName(){
+      this.$emit("setEntityName", this.name)
+    },
   }
 }
 </script>
