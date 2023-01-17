@@ -55,9 +55,8 @@ export default {
   },
   computed: {
     items() {
-      console.log(1)
       return [...this.items]
-    }
+    },
   },
 
 }

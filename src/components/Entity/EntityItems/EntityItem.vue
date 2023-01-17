@@ -17,5 +17,9 @@ export default {
 </script>
 
 <style scoped>
-
+  .item{
+    border: 2px solid red;
+    margin: 20px;
+    padding: 20px;
+  }
 </style>
