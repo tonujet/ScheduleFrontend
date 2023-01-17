@@ -29,6 +29,8 @@ html, body{
   display: flex;
   flex-direction: column;
   height: 100%;
+  max-width: 2000px;
+  margin: 5px 20px;
 }
 
 .app__content{
