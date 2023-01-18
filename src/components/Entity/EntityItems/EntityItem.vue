@@ -24,19 +24,19 @@
         class="item__update-window"
         v-model:is-active="isWindowActive"
     >
-
+        <EntityUpdate/>
     </ModalWindow>
   </div>
 </template>
 
 <script>
 import EntityField from "@/components/Entity/EntityItems/EntityField.vue";
-import ModalWindow from "@/components/UI/ModalWindow.vue";
+import EntityUpdate from "@/components/Entity/EntityCRUD/EntityUpdate/EntityUpdate.vue";
 
 export default {
   name: "EntityItem",
   components: {
-    ModalWindow,
+    EntityUpdate,
     EntityField
   },
   data() {
