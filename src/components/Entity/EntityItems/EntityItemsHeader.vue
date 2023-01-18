@@ -10,9 +10,11 @@
     </div>
     <div class="header__icons">
       <fa
-          class="header__icon"
+          class="item__icon"
           :icon="['fas','circle-plus']"
           size="3x"
+          style="color: green"
+          @click="this.isActiveCreationWindow = true"
       />
     </div>
   </div>
@@ -50,10 +52,6 @@ export default {
 }
 .header__icons{
   margin-left: 73px;
-}
-.header__icon{
-  color: green;
-  cursor: pointer;
 }
 
 </style>
