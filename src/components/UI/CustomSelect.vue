@@ -1,9 +1,7 @@
 <template>
   <v-select
       :options="options"
-      :value="currentOption"
       class="search"
-      style="background: #2f3136; border-radius: 10px"
   />
 </template>
 
@@ -23,19 +21,14 @@ export default {
       type: Array,
       default: () => []
     },
-    currentOption: {
-      type: Object
-    }
   },
-  name: "SearchSelect",
-  methods: {}
+  name: "CustomSelect",
 }
 
 </script>
 
 <style>
 .search {
-  width: 100%;
   --vs-search-input-color: #BEFF7D;
   --vs-controls-color: #BEFF7D;
   --vs-border-radius: 10px;

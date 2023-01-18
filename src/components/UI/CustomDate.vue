@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: "DateInput"
+  name: "CustomDate"
 }
 </script>
 
