@@ -24,7 +24,9 @@
         class="item__update-window"
         v-model:is-active="isWindowActive"
     >
-        <EntityUpdate/>
+        <EntityUpdate
+          :curr-item="item"
+        />
     </ModalWindow>
   </div>
 </template>

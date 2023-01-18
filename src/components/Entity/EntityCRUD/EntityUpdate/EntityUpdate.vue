@@ -5,6 +5,7 @@
       :option="option"
       :currField="currItem[option.name]"
   />
+  <button>Обновити</button>
 </div>
 </template>
 

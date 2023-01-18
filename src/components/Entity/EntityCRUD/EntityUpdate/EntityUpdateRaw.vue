@@ -1,12 +1,14 @@
 <template>
   <div class="update__raw">
     <EntityCellField>
-        s
+        {{option.name}}
     </EntityCellField>
     <EntityCellField>
-        s
+        {{currField}}
     </EntityCellField>
-    <EntityCellComponent/>
+    <EntityCellComponent
+        :comp-name="option.inputType"
+    />
   </div>
 </template>
 
