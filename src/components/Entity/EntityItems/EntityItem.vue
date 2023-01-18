@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import EntityField from "@/components/Entity/EntityList/EntityField.vue";
+import EntityField from "@/components/Entity/EntityItems/EntityField.vue";
 
 export default {
   name: "EntityItem",

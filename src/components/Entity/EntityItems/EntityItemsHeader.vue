@@ -10,7 +10,7 @@
     </div>
     <div class="header__icons">
       <fa
-          class="item__icon"
+          class="header__icon"
           :icon="['fas','circle-plus']"
           size="3x"
           style="color: green"
@@ -18,10 +18,15 @@
       />
     </div>
   </div>
+  <ModalWindow
+    v-model:isActive="isActiveCreationWindow"
+  >
+    asdasdasd
+  </ModalWindow>
 </template>
 
 <script>
-import EntityField from "@/components/Entity/EntityList/EntityField.vue";
+import EntityField from "@/components/Entity/EntityItems/EntityField.vue";
 export default {
   name: "EntityItemHeader",
   components: {
@@ -31,6 +36,11 @@ export default {
   props:{
     cols:{
       required:true,
+    }
+  },
+  data(){
+    return{
+      isActiveCreationWindow:false
     }
   }
 }
@@ -52,6 +62,9 @@ export default {
 }
 .header__icons{
   margin-left: 73px;
+}
+.header__icon{
+  cursor: pointer;
 }
 
 </style>
