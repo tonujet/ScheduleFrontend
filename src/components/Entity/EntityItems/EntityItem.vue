@@ -11,7 +11,9 @@
           class="item__icon"
           :icon="['fas','trash-can']"
           size="3x"
-          style="color: red"/>
+          style="color: red"
+          @click="this.$emit('deleteItem', item.id)"
+      />
       <fa
           class="item__icon"
           :icon="['fas','pen-nib']"

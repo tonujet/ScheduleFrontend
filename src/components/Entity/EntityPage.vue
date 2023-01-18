@@ -7,6 +7,8 @@
         v-if="name"
         :items="items"
         :name="name"
+        @fetch="fetchItems(name)"
+        @deleteItem="deleteItem"
     />
     <div
       v-else
@@ -19,7 +21,6 @@
 <script>
 import EntityList from "@/components/Entity/EntityList/EntityList.vue";
 import EntityItems from "@/components/Entity/EntityItems/EntityItems.vue";
-import news from "@/mocks/news";
 
 export default {
   name: "EntityPage",
@@ -27,10 +28,10 @@ export default {
     EntityList,
     EntityItems
   },
-  created() {
-    const name = localStorage.getItem("entityName")
+  mounted() {
+    const name = localStorage.getItem("entityName");
     if (name) {
-      this.name = name;
+      this.name = name
     }
   },
   data() {
@@ -43,13 +44,22 @@ export default {
     setEntityName(name) {
       localStorage.setItem("entityName", name)
       this.name = name
-    }
-  },
-  watch: {
-    name(value) {
+    },
+    fetchItems(value){
       this.$load(async() =>{
         this.items = (await this.$api.entity.getEntities(value)).data
       })
+    },
+    deleteItem(id){
+      this.items = this.items.filter(item => item.id !== id)
+      this.$load(async() =>{
+        await this.$api.entity.deleteEntity(this.name, id)
+      })
+    },
+  },
+  watch: {
+    name(value) {
+      this.fetchItems(value);
     }
   },
   computed: {

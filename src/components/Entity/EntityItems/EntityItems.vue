@@ -2,11 +2,13 @@
   <div class="items">
     <EntityItemsHeader
         :cols="cols"
+        @fetch="$emit('fetch')"
     />
     <EntityItem
         v-for="value in items"
         :item=value
         :key="value.id"
+        @deleteItem="deleteItem"
     />
   </div>
 </template>
@@ -44,6 +46,11 @@ export default {
       }
 
     }
+  },
+  methods:{
+      deleteItem(id){
+        this.$emit("deleteItem", id)
+      }
   }
 }
 </script>

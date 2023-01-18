@@ -23,7 +23,8 @@
     v-model:isActive="isActiveCreationWindow"
   >
     <EntityCreate
-        :name="name"
+        @closeWindow="this.isActiveCreationWindow = false"
+        @fetch="fetchItems"
     />
   </ModalWindow>
 </template>
@@ -42,12 +43,17 @@ export default {
       required:true,
     }
   },
+  methods:{
+    fetchItems(){
+      this.$emit("fetch")
+    }
+  },
   data(){
     return{
       isActiveCreationWindow:false,
       name:localStorage.getItem("entityName")
     }
-  }
+  },
 }
 </script>
 

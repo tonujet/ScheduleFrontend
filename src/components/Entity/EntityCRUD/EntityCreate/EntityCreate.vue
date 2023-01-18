@@ -5,7 +5,7 @@
       :fieldOption="option"
       @setItemField="setItemField"
   />
-  <button @click="fetchItem">Створити</button>
+  <button @click="createItem">Створити</button>
 </div>
 </template>
 
@@ -19,23 +19,24 @@ export default {
   data(){
     return{
       options:JSON.parse(localStorage.getItem("options")),
-      item:{}
+      item:{},
+      name:localStorage.getItem("entityName")
     }
   },
-  props:{
-    name:{
-      type:String,
-      required:true
-    },
-  },
   methods:{
-    fetchItem(){
+    loadItem(){
       this.$load(async() =>{
         this.$api.entity.createEntity(this.name, this.item)
       })
     },
     setItemField(arr){
       this.item[arr[0]] = arr[1]
+    },
+    createItem(){
+      this.loadItem()
+      this.item = {}
+      this.$emit("closeWindow")
+      this.$emit("fetch")
     }
   },
   computed:{

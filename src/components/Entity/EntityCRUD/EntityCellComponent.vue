@@ -22,6 +22,8 @@
   <div class="cell__component" v-else-if="compName === 'phone'">
     <CustomInput
         v-model="value"
+        v-mask="'+38(0##) ###-##-##'"
+        placeholder="+38(0__)___-__-__"
     />
   </div>
   <div class="cell__component" v-else-if="compName === 'textarea'">
@@ -37,8 +39,13 @@
 </template>
 
 <script>
+import {mask} from 'vue-the-mask'
+
 export default {
   name: "EntityCellComponent",
+  directives:{
+    mask
+  },
   props: {
     compName: [String],
     startValue:[String, Number, Date, Boolean]
