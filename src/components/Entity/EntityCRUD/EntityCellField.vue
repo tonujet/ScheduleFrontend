@@ -1,7 +1,7 @@
 <template>
- <div class="cell__field" v-if="type === 'date'">
-   <slot></slot>
- </div>
+  <div class="cell__field" v-if="type === 'date'">
+    <slot></slot>
+  </div>
   <div class="cell__field" v-else>
     <slot></slot>
   </div>
@@ -11,8 +11,8 @@
 <script>
 export default {
   name: "EntityCellField",
-  props:{
-    type:[String]
+  props: {
+    type: [String]
   }
 }
 </script>

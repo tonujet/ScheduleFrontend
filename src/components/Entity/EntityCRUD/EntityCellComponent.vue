@@ -47,6 +47,11 @@ export default {
     return{
       value:this.startValue
     }
+  },
+  watch:{
+    value(value){
+      this.$emit("setItemField", value)
+    }
   }
 }
 </script>

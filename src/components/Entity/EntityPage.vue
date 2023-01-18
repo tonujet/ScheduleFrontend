@@ -6,6 +6,7 @@
     <EntityItems
         v-if="name"
         :items="items"
+        :name="name"
     />
     <div
       v-else
@@ -46,12 +47,9 @@ export default {
   },
   watch: {
     name(value) {
-      // this.$load(async() =>{
-      //   this.items = (await this.$api.entity.getEntities(value)).data
-      // })
-      if(value ==="news"){
-        this.items = news
-      }
+      this.$load(async() =>{
+        this.items = (await this.$api.entity.getEntities(value)).data
+      })
     }
   },
   computed: {

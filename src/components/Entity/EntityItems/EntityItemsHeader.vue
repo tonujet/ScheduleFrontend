@@ -6,6 +6,7 @@
       <EntityField
           v-for="col in cols"
           :value="col"
+          :key="col"
       />
     </div>
     <div class="header__icons">

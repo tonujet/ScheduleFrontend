@@ -4,6 +4,7 @@
       {{fieldOption.name}}
     </EntityCellField>
     <EntityCellComponent
+        @setItemField="setItemField"
         :comp-name="fieldOption.inputType"
         :start-value="null"
     />
@@ -22,6 +23,11 @@ export default {
   },
   props: {
     fieldOption: [Object]
+  },
+  methods:{
+    setItemField(value){
+      this.$emit("setItemField", [this.fieldOption.name, value])
+    }
   }
 }
 </script>

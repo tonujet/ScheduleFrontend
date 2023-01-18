@@ -3,8 +3,9 @@
   <EntityCreateRaw
       v-for="option in options[name]"
       :fieldOption="option"
+      @setItemField="setItemField"
   />
-  <button>Створити</button>
+  <button @click="fetchItem">Створити</button>
 </div>
 </template>
 
@@ -17,7 +18,8 @@ export default {
   },
   data(){
     return{
-      options:JSON.parse(localStorage.getItem("options"))
+      options:JSON.parse(localStorage.getItem("options")),
+      item:{}
     }
   },
   props:{
@@ -27,6 +29,14 @@ export default {
     },
   },
   methods:{
+    fetchItem(){
+      this.$load(async() =>{
+        this.$api.entity.createEntity(this.name, this.item)
+      })
+    },
+    setItemField(arr){
+      this.item[arr[0]] = arr[1]
+    }
   },
   computed:{
 

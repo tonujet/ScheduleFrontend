@@ -26,10 +26,23 @@ export default {
       type: Array,
       required: true
     },
+    name:{
+      type: String,
+      required: true
+    }
   },
   computed:{
     cols(){
-        return this.items[0] && Object.keys(this.items[0]).slice(1)
+      if(this.name){
+        const cols = []
+        JSON.parse(localStorage.getItem("options"))
+            [this.name]
+            .forEach(item =>{
+          cols.push(item.name)
+        })
+        return cols
+      }
+
     }
   }
 }

@@ -2,8 +2,8 @@
   <div class="item">
     <div class="item__fields">
       <EntityField
-          v-for="(value, key, index) in item"
-          :value="index !== 0 ? value : null"
+          v-for="(value, key, index) in itemForUser"
+          :value="value"
       />
     </div>
     <div class="item__icons">
@@ -50,6 +50,13 @@ export default {
     item: {
       type: Object,
       required: true,
+    }
+  },
+  computed:{
+    itemForUser(){
+      const item = {...this.item}
+      delete item.id
+      return item
     }
   }
 }
