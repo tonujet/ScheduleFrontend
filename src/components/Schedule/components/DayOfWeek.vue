@@ -1,15 +1,14 @@
 <template>
   <div class="lessonsWrapper">
-    <p>{{dayOfWeek}}</p>
+    <p>{{ dayOfWeek }}</p>
     <Lesson v-for="{id, name,
     dayOfWeek,
     time,
     classroom,
     teacher,
     discipline,
-    group} in lessons" :key="id" :name="name" :dayOfWeek="dayOfWeek" :time="time" , :classroom="classroom"
-            :teacher="teacher" :discipline="discipline" :group="group">
-    </Lesson>
+    group} in sortedLessons" :key="id" :name="name" :dayOfWeek="dayOfWeek" :time="time" :classroom="classroom"
+            :teacher="teacher" :discipline="discipline" :group="group"/>
   </div>
 </template>
 
@@ -19,6 +18,11 @@ import Lesson from "./components/Lesson.vue";
 export default {
   name: "DayOfWeek",
   components: {Lesson},
+  computed: {
+    sortedLessons() {
+      return [...this.lessons].sort((a, b) => a.time.charCode - b.time.charCode)
+    }
+  },
   props: {
     dayOfWeek: String,
     lessons: Array,
@@ -29,13 +33,16 @@ export default {
 <style scoped>
 
 .lessonsWrapper {
+  height: fit-content;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  text-align: start;
   align-items: center;
-  width: 50%;
   background: orange;
-  padding: 20px;
+  border-radius: 10px;
+  margin: 10px;
+  padding-top: 10px;
 }
 
 </style>

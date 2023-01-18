@@ -1,26 +1,25 @@
 <template>
 <div>
-  <p>
-    name: {{name}}
-  </p>
-  <p>
-    day of week: {{dayOfWeek}}
-  </p>
-  <p>
+  <p class="timeWrapper">
     time: {{time}}
   </p>
-  <p>
-    classroom: {{classroom}}
-  </p>
-  <p>
-    teacher: {{`${teacher.name} ${teacher.surname}`}}
-  </p>
-  <p>
-    discipline: {{discipline}}
-  </p>
-  <p>
-    group: {{group}}
-  </p>
+  <div class="lessonInfo">
+    <p>
+      name: {{name}}
+    </p>
+    <p>
+      classroom: {{classroom}}
+    </p>
+    <p>
+      teacher: {{`${teacher.name} ${teacher.surname}`}}
+    </p>
+    <p>
+      discipline: {{discipline}}
+    </p>
+    <p>
+      group: {{group}}
+    </p>
+  </div>
 </div>
 </template>
 
@@ -29,7 +28,6 @@ export default {
   name: "Lesson",
   props: {
     name: String,
-    dayOfWeek: String,
     time: String,
     classroom: String,
     teacher: Object,
@@ -40,5 +38,16 @@ export default {
 </script>
 
 <style scoped>
+
+.timeWrapper {
+  background: black;
+  color: orange;
+  text-align: center;
+  width: 100%;
+}
+
+.lessonInfo {
+  padding: 20px;
+}
 
 </style>
