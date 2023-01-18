@@ -4,7 +4,7 @@
       name=""
       id=""
       @input="$emit('update:modelValue', $event.target.value)"
-      :value="modelValue"
+      :value="modelValue && modelValue"
       placeholder="text"
   >
 

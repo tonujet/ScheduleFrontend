@@ -3,11 +3,14 @@
     <EntityCellField>
       {{ option.name }}
     </EntityCellField>
-    <EntityCellField>
+    <EntityCellField
+        :type="option.inputType"
+    >
       {{ currField }}
     </EntityCellField>
     <EntityCellComponent
         :comp-name="option.inputType"
+        :startValue="currField"
     />
   </div>
 </template>

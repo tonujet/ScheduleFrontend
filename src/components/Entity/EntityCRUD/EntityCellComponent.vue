@@ -1,24 +1,38 @@
 <template>
   <div class="cell__component" v-if="compName === 'text'">
-    <CustomInput/>
+    <CustomInput
+        v-model="value"
+    />
   </div>
   <div class="cell__component" v-else-if="compName === 'data'">
-    <CustomSelect/>
+    <CustomSelect
+        v-model="value"
+    />
   </div>
   <div class="cell__component" v-else-if="compName === 'selectWeekDays'">
-    <CustomSelect/>
+    <CustomSelect
+        v-model="value"
+    />
   </div>
   <div class="cell__component" v-else-if="compName === 'email'">
-    <CustomInput/>
+    <CustomInput
+        v-model="value"
+    />
   </div>
   <div class="cell__component" v-else-if="compName === 'phone'">
-    <CustomInput/>
+    <CustomInput
+        v-model="value"
+    />
   </div>
   <div class="cell__component" v-else-if="compName === 'textarea'">
-    <CustomInput/>
+    <CustomInput
+        v-model="value"
+    />
   </div>
   <div class="cell__component" v-else-if="compName === 'date'">
-    <CustomDate/>
+    <CustomDate
+        v-model="value"
+    />
   </div>
 </template>
 
@@ -27,6 +41,12 @@ export default {
   name: "EntityCellComponent",
   props: {
     compName: [String],
+    startValue:[String, Number, Date, Boolean]
+  },
+  data(){
+    return{
+      value:this.startValue
+    }
   }
 }
 </script>

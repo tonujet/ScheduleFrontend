@@ -2,7 +2,7 @@
   <input
       type="text"
       class="input"
-      :value="modelValue"
+      :value="modelValue && modelValue"
       @input="$emit('update:modelValue', $event.target.value)"
       placeholder="Значення поля"
   >

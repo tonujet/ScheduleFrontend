@@ -5,6 +5,7 @@
     </EntityCellField>
     <EntityCellComponent
         :comp-name="fieldOption.inputType"
+        :start-value="null"
     />
   </div>
 </template>
