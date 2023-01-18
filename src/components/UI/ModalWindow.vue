@@ -1,6 +1,13 @@
 <template>
-  <div class="modalWindow" v-if="isOpen">
-    <div class="modalWindow__content">
+  <div
+      class="modalWindow"
+      v-if="isActive"
+      @click="hideDialog"
+  >
+    <div
+        class="modalWindow__content"
+        @click.stop
+    >
       <slot></slot>
     </div>
   </div>
@@ -10,9 +17,14 @@
 export default {
   name: "ModalWindow",
   props:{
-    isOpen:{
+    isActive:{
       type:Boolean,
       default:false
+    }
+  },
+  methods:{
+    hideDialog(){
+      this.$emit("update:isActive", false)
     }
   }
 }
@@ -24,9 +36,12 @@ export default {
   left: 0;
   bottom: 0;
   right: 0;
-  background: rgba(0, 0, 0 , 0.8);
+  background: rgba(0, 0, 0 , 0.9);
   display: flex;
   position: fixed;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .modalWindow__content{
   position: relative;

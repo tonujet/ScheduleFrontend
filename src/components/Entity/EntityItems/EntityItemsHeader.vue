@@ -9,8 +9,19 @@
       />
     </div>
     <div class="header__icons">
-      <fa class="item__icon" :icon="['fas','circle-plus']" size="3x" style="color: green"/>
+      <fa
+          class="item__icon"
+          :icon="['fas','circle-plus']"
+          size="3x"
+          style="color: green"
+          @click="this.isActiveCreationWindow = true"
+      />
     </div>
+    <ModalWindow
+        v-model:isActive="isActiveCreationWindow"
+    >
+      asdasd
+    </ModalWindow>
   </div>
 </template>
 
@@ -25,6 +36,11 @@ export default {
   props:{
     cols:{
       required:true,
+    }
+  },
+  data(){
+    return{
+      isActiveCreationWindow:false
     }
   }
 }
