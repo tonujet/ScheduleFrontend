@@ -9,7 +9,11 @@
       />
     </div>
     <div class="header__icons">
-      <fa class="item__icon" :icon="['fas','circle-plus']" size="3x" style="color: green"/>
+      <fa
+          class="header__icon"
+          :icon="['fas','circle-plus']"
+          size="3x"
+      />
     </div>
   </div>
 </template>
@@ -46,6 +50,10 @@ export default {
 }
 .header__icons{
   margin-left: 73px;
+}
+.header__icon{
+  color: green;
+  cursor: pointer;
 }
 
 </style>

@@ -7,8 +7,17 @@
       />
     </div>
     <div class="item__icons">
-      <fa class="item__icon" :icon="['fas','trash-can']" size="3x" style="color: red"/>
-      <fa class="item__icon" :icon="['fas','pen-nib']" size="3x" style="color: blue"/>
+      <fa
+          class="item__icon"
+          :icon="['fas','trash-can']"
+          size="3x"
+          style="color: red"/>
+      <fa
+          class="item__icon"
+          :icon="['fas','pen-nib']"
+          size="3x"
+          style="color: blue"
+      />
     </div>
   </div>
 </template>
@@ -49,5 +58,7 @@ export default {
 }
 .item__icon{
   margin-left: 15px;
+  cursor: pointer;
 }
+
 </style>
