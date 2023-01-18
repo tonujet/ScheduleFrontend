@@ -35,5 +35,7 @@ export default {
 </script>
 
 <style scoped>
-
+  .items{
+    padding: 0 20px;
+  }
 </style>
