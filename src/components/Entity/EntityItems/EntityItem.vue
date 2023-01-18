@@ -17,20 +17,33 @@
           :icon="['fas','pen-nib']"
           size="3x"
           style="color: blue"
+          @click="isWindowActive=true"
       />
     </div>
+    <ModalWindow
+        class="item__update-window"
+        v-model:is-active="isWindowActive"
+    >
+
+    </ModalWindow>
   </div>
 </template>
 
 <script>
 import EntityField from "@/components/Entity/EntityItems/EntityField.vue";
+import ModalWindow from "@/components/UI/ModalWindow.vue";
 
 export default {
   name: "EntityItem",
   components: {
+    ModalWindow,
     EntityField
   },
-
+  data() {
+    return {
+      isWindowActive: false
+    }
+  },
   props: {
     item: {
       type: Object,
@@ -49,14 +62,17 @@ export default {
   justify-content: space-between;
   align-items: center;
 }
-.item__fields{
+
+.item__fields {
   flex: 1 1 auto;
   display: flex;
 }
-.item__icons{
+
+.item__icons {
   margin-left: 20px;
 }
-.item__icon{
+
+.item__icon {
   margin-left: 15px;
   cursor: pointer;
 }
