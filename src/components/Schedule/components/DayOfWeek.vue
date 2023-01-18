@@ -1,14 +1,15 @@
 <template>
   <div class="lessonsWrapper">
     <p>{{ dayOfWeek }}</p>
-    <Lesson v-for="{id, name,
-    dayOfWeek,
-    time,
-    classroom,
-    teacher,
-    discipline,
-    group} in sortedLessons" :key="id" :name="name" :dayOfWeek="dayOfWeek" :time="time" :classroom="classroom"
-            :teacher="teacher" :discipline="discipline" :group="group"/>
+    <div v-for="timeUnit in time" class="unitWrapper">
+      <p class="timeSeparator">
+        time: {{timeUnit}}
+      </p>
+      <div class="unit">
+        <Lesson v-if="lessons.map(lesson => lesson.time).includes(timeUnit)" :key="lessons.find(record => record.time === timeUnit).id" :lesson="lessons.find(record => record.time === timeUnit)"/>
+        <div v-else class="scheduleRecordFiller"></div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -19,21 +20,21 @@ export default {
   name: "DayOfWeek",
   components: {Lesson},
   computed: {
-    sortedLessons() {
-      return [...this.lessons].sort((a, b) => a.time.charCode - b.time.charCode)
-    }
+    time: () => time
   },
   props: {
     dayOfWeek: String,
     lessons: Array,
   }
 }
+
+const time = ["08:30","10:25","12:20","14:15","16:10","18:05"]
+
 </script>
 
 <style scoped>
 
 .lessonsWrapper {
-  height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -42,7 +43,27 @@ export default {
   background: orange;
   border-radius: 10px;
   margin: 10px;
-  padding-top: 10px;
+  padding: 10px 0;
+}
+
+.unitWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 300px;
+}
+
+.unit {
+  height: 100%;
+}
+
+.timeSeparator {
+  width: 100%;
+  background: black;
+  color: orange;
+  text-align: center;
 }
 
 </style>

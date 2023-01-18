@@ -1,52 +1,38 @@
 <template>
-<div>
-  <p class="timeWrapper">
-    time: {{time}}
-  </p>
-  <div class="lessonInfo">
+  <div class="lessonWrapper">
     <p>
-      name: {{name}}
+      Назва: {{ lesson.name }}
     </p>
     <p>
-      classroom: {{classroom}}
+      Клас: {{ lesson.classroom }}
     </p>
     <p>
-      teacher: {{`${teacher.name} ${teacher.surname}`}}
+      Викладач: {{ `${lesson.teacher.name} ${lesson.teacher.surname}` }}
     </p>
     <p>
-      discipline: {{discipline}}
+      Предмет: {{ lesson.discipline }}
     </p>
     <p>
-      group: {{group}}
+      Група: {{ lesson.group }}
     </p>
   </div>
-</div>
 </template>
 
 <script>
 export default {
   name: "Lesson",
   props: {
-    name: String,
-    time: String,
-    classroom: String,
-    teacher: Object,
-    discipline: Object,
-    group: Object,
+    lesson: Object,
   }
 }
 </script>
 
 <style scoped>
 
-.timeWrapper {
-  background: black;
-  color: orange;
-  text-align: center;
+.lessonWrapper {
   width: 100%;
-}
-
-.lessonInfo {
+  height: 100%;
+  text-align: center;
   padding: 20px;
 }
 
