@@ -1,7 +1,7 @@
 export default function (instance) {
     return {
-        getEntities(name, limit) {
-            return instance.get(`${name}?limit=${limit}`)
+        getEntities(name) {
+            return instance.get(`${name}`)
         },
         getEntity(name, id) {
             return instance.get(`${name}/${id}`)
