@@ -22,7 +22,9 @@ export default {
 <style scoped>
 
 .schedulePageWrapper {
+  width: 100%;
   display: flex;
+  justify-content: space-evenly;
 }
 
 </style>

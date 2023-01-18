@@ -29,7 +29,13 @@ export default {
 <style scoped>
 
 .lessonsWrapper {
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  background: orange;
+  padding: 20px;
 }
 
 </style>
