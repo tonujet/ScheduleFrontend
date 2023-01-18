@@ -26,5 +26,7 @@ export default {
 </script>
 
 <style scoped>
-
+  .create__raw{
+    margin-bottom: 20px;
+  }
 </style>
