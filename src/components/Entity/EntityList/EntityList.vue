@@ -3,6 +3,7 @@
   <EntityBlock
       v-for="(value, key) in options"
       :name="key"
+      :key="key"
       @setEntityName="setEntityName"
   />
 </div>

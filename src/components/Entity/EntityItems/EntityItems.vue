@@ -6,6 +6,7 @@
     <EntityItem
         v-for="value in items"
         :item=value
+        :key="value.id"
     />
   </div>
 </template>

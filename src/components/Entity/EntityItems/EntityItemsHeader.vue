@@ -21,16 +21,19 @@
   <ModalWindow
     v-model:isActive="isActiveCreationWindow"
   >
-    asdasdasd
+    <EntityCreate
+        :name="name"
+    />
   </ModalWindow>
 </template>
 
 <script>
 import EntityField from "@/components/Entity/EntityItems/EntityField.vue";
+import EntityCreate from "@/components/Entity/EntityCRUD/EntityCreate/EntityCreate.vue";
 export default {
   name: "EntityItemHeader",
   components: {
-    EntityField
+    EntityField, EntityCreate
   },
 
   props:{
@@ -40,7 +43,8 @@ export default {
   },
   data(){
     return{
-      isActiveCreationWindow:false
+      isActiveCreationWindow:false,
+      name:localStorage.getItem("entityName")
     }
   }
 }

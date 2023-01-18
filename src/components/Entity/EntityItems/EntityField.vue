@@ -12,7 +12,6 @@ export default {
   name: "EntityField",
   props:{
     value:{
-      type:String,
       required:true,
     }
   }
