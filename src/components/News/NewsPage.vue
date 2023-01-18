@@ -1,23 +1,29 @@
 <template>
   <div class="newsWrapper">
-    <NewsCard v-for="{id,
-    title,
-    description,
-    text,
-    dateCreated} in news" :title="title" :description="description" :text="text" :dateCreated="dateCreated"/>
+    <ModalWindow :isActive="isModalOpen"/>
+    <NewsCardsList :news="news"/>
   </div>
 </template>
 
 <script>
-import NewsCard from "@/components/News/components/newsCard.vue";
+import {ref} from "vue";
+import ModalWindow from "@/components/UI/ModalWindow.vue";
+import NewsCardsList from "./components/newsCardsList/NewsCardsList.vue";
 
 export default {
   name: "NewsPage",
-  components: {NewsCard},
+  components: {NewsCardsList, ModalWindow},
   computed: {
     news: () => news,
+    isModalOpen: () => isModalOpen.value
   }
 }
+
+const isModalOpen = ref(false);
+const handleModalSwitch = () => {
+  isModalOpen.value ? isModalOpen.value = false : isModalOpen.value = true
+}
+
 
 const news = [{
   "id": 12,
@@ -177,10 +183,4 @@ const news = [{
 </script>
 
 <style scoped>
-.newsWrapper {
-  display: grid;
-  grid-gap: 10px;
-  word-break: break-word;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-}
 </style>
