@@ -10,9 +10,13 @@
 <script>
 import MyHeader from "@/components/Header/MyHeader.vue";
 import MyFooter from "@/components/Footer/MyFooter.vue";
+import options from "@/mocks/options";
  export default {
    components:{
      MyHeader, MyFooter
+   },
+   created() {
+     localStorage.setItem("options", JSON.stringify(options))
    }
  }
 </script>

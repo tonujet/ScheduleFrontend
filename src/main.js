@@ -16,7 +16,7 @@ icons.forEach(icon =>{
 })
 
 UI.forEach(component =>{
-   app.mount(component.name, component)
+   app.component(component.name, component)
 })
 
 
