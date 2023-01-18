@@ -1,6 +1,7 @@
 import {createRouter, createWebHistory} from "vue-router";
 import SchedulePage from "@/components/Schedule/SchedulePage.vue";
 import EntityListPage from "@/components/EntityList/EntityListPage.vue";
+import NewsPage from "@/components/News/NewsPage.vue";
 
 
 const routes = [
@@ -13,6 +14,10 @@ const routes = [
         path:"/entities",
         component: EntityListPage,
     },
+    {
+        path: "/news",
+        component: NewsPage,
+    }
 ]
 
 const router = createRouter(
