@@ -46,10 +46,11 @@ export default {
   },
   watch: {
     name(value) {
-      if (value === "news") {
+      // this.$load(async() =>{
+      //   this.items = (await this.$api.entity.getEntities(value)).data
+      // })
+      if(value ==="news"){
         this.items = news
-      } else {
-        this.items = []
       }
     }
   },
