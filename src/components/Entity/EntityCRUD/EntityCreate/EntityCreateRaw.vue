@@ -1,12 +1,13 @@
 <template>
   <div class="create__raw">
-    <EntityCellField>
-      {{fieldOption.name}}
-    </EntityCellField>
+    <EntityCellField
+      :field="fieldOption.name"
+    />
     <EntityCellComponent
         @setItemField="setItemField"
         :comp-name="fieldOption.inputType"
         :start-value="null"
+        :values="values"
     />
   </div>
 </template>
@@ -25,10 +26,26 @@ export default {
     fieldOption: [Object]
   },
   methods:{
-    setItemField(value){
+    setItemField(value) {
       this.$emit("setItemField", [this.fieldOption.name, value])
+    },
+    fetchDataSource(){
+      if(this.fieldOption.dataSource){
+        this.$load(async() =>{
+          this.values = (await this.$api.entity.getEntities(this.fieldOption.dataSource)).data
+          console.log(this.values)
+        })
+      }
     }
-  }
+  },
+  data(){
+    return{
+      values:[]
+    }
+  },
+  mounted() {
+    this.fetchDataSource();
+  },
 }
 </script>
 

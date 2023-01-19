@@ -36,7 +36,9 @@ export default {
       this.loadItem()
       this.item = {}
       this.$emit("closeWindow")
-      this.$emit("fetch")
+      setTimeout(()=>{
+        this.$emit("fetch")
+      },100)
     }
   },
   computed:{

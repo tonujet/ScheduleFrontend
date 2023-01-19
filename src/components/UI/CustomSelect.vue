@@ -2,6 +2,7 @@
   <v-select
       :options="options"
       class="search"
+      label="name"
   />
 </template>
 
@@ -29,9 +30,10 @@ export default {
 
 <style>
 .search {
-  --vs-search-input-color: #BEFF7D;
-  --vs-controls-color: #BEFF7D;
+  --vs-search-input-color: black;
+  --vs-controls-color: black;
   --vs-border-radius: 10px;
+  --vs-border-color: black;
   --vs-font-size: 1.2rem;
 
 
@@ -42,7 +44,7 @@ export default {
   --vs-dropdown-option-padding: 8px 20px;
   --vs-actions-padding: 5px 20px 0px 0px;
   --vs-selected-bg: #40444b;
-  --vs-selected-color: #BEFF7D;
+  --vs-selected-color: black;
 
 
   --vs-dropdown-option--active-bg: #2f3136;

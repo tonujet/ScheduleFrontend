@@ -7,6 +7,7 @@
   <div class="cell__component" v-else-if="compName === 'data'">
     <CustomSelect
         v-model="value"
+        :options="values"
     />
   </div>
   <div class="cell__component" v-else-if="compName === 'selectWeekDays'">
@@ -48,7 +49,8 @@ export default {
   },
   props: {
     compName: [String],
-    startValue:[String, Number, Date, Boolean]
+    startValue:[String, Number, Date, Boolean],
+    values:[Array],
   },
   data(){
     return{
@@ -59,7 +61,8 @@ export default {
     value(value){
       this.$emit("setItemField", value)
     }
-  }
+  },
+
 }
 </script>
 
