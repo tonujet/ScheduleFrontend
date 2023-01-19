@@ -28,7 +28,7 @@
     />
   </div>
   <div class="cell__component" v-else-if="compName === 'textarea'">
-    <CustomInput
+    <CustomTextarea
         v-model="value"
     />
   </div>
@@ -41,9 +41,11 @@
 
 <script>
 import {mask} from 'vue-the-mask'
+import CustomTextarea from "@/components/UI/CustomTextarea.vue";
 
 export default {
   name: "EntityCellComponent",
+  components: {CustomTextarea},
   directives:{
     mask
   },
