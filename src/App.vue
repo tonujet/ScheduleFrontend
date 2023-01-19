@@ -10,6 +10,8 @@
 <script>
 import MyHeader from "@/components/Header/MyHeader.vue";
 import MyFooter from "@/components/Footer/MyFooter.vue";
+import "vue-select/dist/vue-select.css";
+
  export default {
    components:{
      MyHeader, MyFooter
