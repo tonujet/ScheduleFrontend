@@ -25,12 +25,12 @@ export default {
 <style scoped>
 .footer {;
   display: flex;
-  background: orange;
+  background: var(--secondary-color);
   padding: 20px;
 }
 
 .footer__content {
-  color: darkblue;
+  color: var(--thirdly-color);
   width: 100%;
   display: flex;
   flex-direction: column;
