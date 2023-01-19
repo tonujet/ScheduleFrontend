@@ -13,6 +13,7 @@
   <div class="cell__component" v-else-if="compName === 'selectWeekDays'">
     <CustomSelect
         v-model="value"
+        :options="Object.keys(weekDays)"
     />
   </div>
   <div class="cell__component" v-else-if="compName === 'email'">
@@ -42,6 +43,7 @@
 <script>
 import {mask} from 'vue-the-mask'
 import CustomTextarea from "@/components/UI/CustomTextarea.vue";
+import weekDays from "@/assets/constants/WeekDays";
 
 export default {
   name: "EntityCellComponent",
@@ -56,7 +58,8 @@ export default {
   },
   data(){
     return{
-      value:this.startValue
+      value:this.startValue,
+      weekDays:weekDays,
     }
   },
   watch:{
