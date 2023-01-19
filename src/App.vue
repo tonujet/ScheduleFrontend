@@ -30,12 +30,12 @@ html, body{
   flex-direction: column;
   height: 100%;
   max-width: 2000px;
-  margin: 5px 20px;
 }
 
 .app__content{
   display: block;
   flex: 1 1 auto;
+  margin: 0px 10px;
 }
 .app__footer{
   flex: 0 0 auto;
