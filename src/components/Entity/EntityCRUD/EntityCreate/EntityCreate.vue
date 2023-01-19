@@ -24,21 +24,19 @@ export default {
     }
   },
   methods:{
-    loadItem(){
+    uploadItem(){
       this.$load(async() =>{
         this.$api.entity.createEntity(this.name, this.item)
+            .then(this.$emit("fetch"))
       })
     },
     setItemField(arr){
       this.item[arr[0]] = arr[1]
     },
     createItem(){
-      this.loadItem()
+      this.uploadItem()
       this.item = {}
       this.$emit("closeWindow")
-      setTimeout(()=>{
-        this.$emit("fetch")
-      },100)
     }
   },
   computed:{

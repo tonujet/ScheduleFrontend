@@ -28,6 +28,8 @@
     >
         <EntityUpdate
           :curr-item="item"
+          @closeWindow="isWindowActive = false"
+          @fetch="fetchData"
         />
     </ModalWindow>
   </div>
@@ -59,6 +61,11 @@ export default {
       const item = {...this.item}
       delete item.id
       return item
+    }
+  },
+  methods:{
+    fetchData(){
+      this.$emit("fetch")
     }
   }
 }

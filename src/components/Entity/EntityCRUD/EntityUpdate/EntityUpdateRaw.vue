@@ -1,16 +1,17 @@
 <template>
   <div class="update__raw">
-    <EntityCellField>
-      {{ option.name }}
-    </EntityCellField>
+    <EntityCellField
+      :field="option.name"
+    />
     <EntityCellField
         :type="option.inputType"
-    >
-      {{ currField }}
-    </EntityCellField>
+        :field="currField"
+    />
     <EntityCellComponent
+        @setItemField="setItemField"
         :comp-name="option.inputType"
         :startValue="currField"
+        :values="values"
     />
   </div>
 </template>
@@ -28,7 +29,28 @@ export default {
   props: {
     option: [Object],
     currField: [String, Number, Boolean]
-  }
+  },
+  methods:{
+    setItemField(value) {
+      this.$emit("setItemField", [this.option.name, value])
+    },
+    fetchDataSource(){
+      if(this.option.dataSource){
+        this.$load(async() =>{
+          this.values = (await this.$api.entity.getEntities(this.option.dataSource)).data
+          console.log(this.values)
+        })
+      }
+    }
+  },
+  mounted() {
+    this.fetchDataSource();
+  },
+  data(){
+    return{
+      values:[]
+    }
+  },
 
 }
 </script>

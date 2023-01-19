@@ -5,10 +5,11 @@
         @fetch="$emit('fetch')"
     />
     <EntityItem
-        v-for="value in items"
-        :item=value
-        :key="value.id"
+        v-for="item in items"
+        :item="item"
+        :key="item.id"
         @deleteItem="deleteItem"
+        @fetch="$emit('fetch')"
     />
   </div>
 </template>

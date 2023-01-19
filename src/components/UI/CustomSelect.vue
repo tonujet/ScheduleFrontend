@@ -3,6 +3,7 @@
       :options="options"
       class="search"
       label="name"
+      placeholder="Оберіть значення"
   />
 </template>
 
