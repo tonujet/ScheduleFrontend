@@ -10,11 +10,15 @@
 <script>
 import MyHeader from "@/components/Header/MyHeader.vue";
 import MyFooter from "@/components/Footer/MyFooter.vue";
+import options from "@/mocks/options";
 import "vue-select/dist/vue-select.css";
 
  export default {
    components:{
      MyHeader, MyFooter
+   },
+   created() {
+     localStorage.setItem("options", JSON.stringify(options))
    }
  }
 </script>
