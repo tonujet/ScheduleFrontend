@@ -21,7 +21,7 @@ export default {
 
 <style scoped>
   .header{
-    background: #ffa841;
+    background: var(--secondary-color);
     display: flex;
     align-items: stretch;
     margin-bottom: 20px;
@@ -34,7 +34,6 @@ export default {
     width: 200px;
   }
   .header__link{
-    background: orange;
     display: flex;
     flex-direction: column;
     justify-content: center;

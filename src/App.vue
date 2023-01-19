@@ -24,13 +24,22 @@ import "vue-select/dist/vue-select.css";
 </script>
 <style>
 *{
+  --main-color: #f0f3bd;
+  --secondary-color: #05668d;
+  --thirdly-color: #00a896;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 html, body{
+  background: var(--main-color);
   height: 100%;
 }
+
+a {
+  color: var(--thirdly-color);
+}
+
 .app{
   display: flex;
   flex-direction: column;

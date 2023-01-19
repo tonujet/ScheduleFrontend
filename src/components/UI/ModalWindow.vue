@@ -46,11 +46,8 @@ export default {
 .modalWindow__content{
   position: relative;
   background: white;
-<<<<<<< HEAD
   height: 300px;
   width: 300px;
-=======
   padding: 20px;
->>>>>>> main
 }
 </style>
