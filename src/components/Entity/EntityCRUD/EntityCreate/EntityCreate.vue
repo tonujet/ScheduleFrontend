@@ -26,8 +26,8 @@ export default {
   methods:{
     uploadItem(){
       this.$load(async() =>{
-        this.$api.entity.createEntity(this.name, this.item)
-            .then(this.$emit("fetch"))
+        await this.$api.entity.createEntity(this.name, this.item)
+        this.fetchItems(localStorage.getItem("entityName"));
       })
     },
     setItemField(arr){
@@ -39,8 +39,11 @@ export default {
       this.$emit("closeWindow")
     }
   },
-  computed:{
-
+  props:{
+    fetchItems:{
+      type:Function,
+      required:true,
+    }
   }
 
 }

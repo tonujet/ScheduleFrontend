@@ -2,7 +2,7 @@
   <div class="items">
     <EntityItemsHeader
         :cols="cols"
-        @fetch="$emit('fetch')"
+        :fetchItems="fetchItems"
     />
     <EntityItem
         v-for="item in items"
@@ -10,6 +10,7 @@
         :key="item.id"
         @deleteItem="deleteItem"
         @fetch="$emit('fetch')"
+        :fetchItems="fetchItems"
     />
   </div>
 </template>
@@ -32,6 +33,10 @@ export default {
     name:{
       type: String,
       required: true
+    },
+    fetchItems:{
+      type:Function,
+      required: true,
     }
   },
   computed:{

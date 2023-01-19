@@ -29,7 +29,7 @@
         <EntityUpdate
           :curr-item="item"
           @closeWindow="isWindowActive = false"
-          @fetch="fetchData"
+          :fetchItems="fetchItems"
         />
     </ModalWindow>
   </div>
@@ -54,6 +54,10 @@ export default {
     item: {
       type: Object,
       required: true,
+    },
+    fetchItems:{
+      type: Function,
+      required: true,
     }
   },
   computed:{
@@ -64,9 +68,6 @@ export default {
     }
   },
   methods:{
-    fetchData(){
-      this.$emit("fetch")
-    }
   }
 }
 </script>

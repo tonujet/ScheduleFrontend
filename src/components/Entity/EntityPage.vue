@@ -7,7 +7,7 @@
         v-if="name"
         :items="items"
         :name="name"
-        @fetch="fetchItems(name)"
+        :fetchItems="fetchItems"
         @deleteItem="deleteItem"
     />
     <div

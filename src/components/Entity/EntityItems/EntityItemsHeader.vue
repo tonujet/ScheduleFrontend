@@ -24,7 +24,7 @@
   >
     <EntityCreate
         @closeWindow="this.isActiveCreationWindow = false"
-        @fetch="fetchItems"
+        :fetchItems="fetchItems"
     />
   </ModalWindow>
 </template>
@@ -41,11 +41,10 @@ export default {
   props:{
     cols:{
       required:true,
-    }
-  },
-  methods:{
-    fetchItems(){
-      this.$emit("fetch")
+    },
+    fetchItems:{
+      type:Function,
+      required: true,
     }
   },
   data(){

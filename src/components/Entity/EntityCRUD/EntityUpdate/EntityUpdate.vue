@@ -24,15 +24,19 @@ export default {
     }
   },
   props:{
-    currItem:[Object]
+    currItem:[Object],
+    fetchItems:{
+      type:Function,
+      required:true,
+    }
   },
   methods:{
     uploadItem(){
       this.$load(async() =>{
-        this.$api.entity.updateEntity(
+        await this.$api.entity.updateEntity(
             localStorage.getItem("entityName"), this.item
         )
-            .then(this.$emit("fetch"))
+        this.fetchItems(localStorage.getItem("entityName"))
       })
     },
     updateItem(){
